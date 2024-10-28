@@ -6,8 +6,7 @@ public class Bai2 {
     public int Subsequent(int[] Arr, int k){
         int  ans = -1, pre = 0, sum = 0 , num = 0;
        for(int i = 0 ; i < Arr.length ; i++){
-           num = ((i >= k) ? Math.min(num, sum += Arr[i-k]) : 0);
-           ans = ((i >= k) ? Math.max(ans, (pre += Arr[i]) - num) : (pre += Arr[i]));
+           ans = ((i >= k) ? Math.max(ans, (pre += Arr[i]) - Math.min(num, sum += Arr[i-k])) : (pre += Arr[i]));
        }
         return ans;
     }
